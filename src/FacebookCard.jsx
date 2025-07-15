@@ -15,7 +15,6 @@ const FacebookCard = ({ fbUrl }) => {
         style={{
           display: "block",
           marginBottom: "15px",
-          paddingTop: "75px",
           color: "#1877f2",
           textDecoration: "none",
           fontWeight: "bold",
