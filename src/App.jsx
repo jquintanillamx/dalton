@@ -79,7 +79,14 @@ const App = () => {
   }
 
   const socialId = overrideSocialId ?? Number(engagementParams?.serviceId);
-  console.warn("AAAAAAAAAAAAAAAAAAAAAAAa" + socialId);
+  
+  const conversation = engagementParams?.conversation || "";
+const [conversationChannel, conversationUrl] = conversation.split(",", 2);
+
+console.log("Canal:", conversationChannel);
+console.log("URL:", conversationUrl);
+
+
 
   if (socialId == "12") {
     userIdVisible = engagementParams?.userName;
