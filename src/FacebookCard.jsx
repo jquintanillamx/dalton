@@ -16,15 +16,15 @@ const FacebookCard = ({ fbUrl }) => {
           borderRadius: "12px",
           boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
           maxWidth: "600px",
-          width: "100%",           // 💡 Asegura que el contenedor es flexible
-          overflow: "hidden",      // 💡 Evita desbordes del iframe
-          margin: "20px auto"
+          width: "100%",
+          overflow: "hidden",
+          margin: "20px auto",
         }}
       >
         <div
           className="fb-post"
           data-href={fbUrl}
-          data-width="100%"      // 💡 Clave para responsivo
+          data-width="500"
         ></div>
 
         <a
@@ -35,7 +35,7 @@ const FacebookCard = ({ fbUrl }) => {
             display: "block",
             marginTop: "15px",
             color: "#1877f2",
-            textDecoration: "none"
+            textDecoration: "none",
           }}
         >
           🔗 Ver publicación directamente en Facebook
@@ -50,7 +50,7 @@ const FacebookCard = ({ fbUrl }) => {
             color: "#fff",
             border: "none",
             borderRadius: "6px",
-            cursor: "pointer"
+            cursor: "pointer",
           }}
         >
           🔄 Recargar publicación
