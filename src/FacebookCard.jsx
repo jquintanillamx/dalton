@@ -21,7 +21,7 @@ const FacebookCard = ({ fbUrl }) => {
           width: "100%",
           overflow: "hidden",
           margin: "20px auto",
-          height: `${forcedHeight}px`, // Forzar alto máximo del contenedor
+          height: `800px`, // Forzar alto máximo del contenedor
         }}
       >
         <div
@@ -34,7 +34,19 @@ const FacebookCard = ({ fbUrl }) => {
             height: `${forcedHeight}px`,
           }}
         ></div>
-
+<a
+          href={fbUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "block",
+            marginTop: "15px",
+            color: "#1877f2",
+            textDecoration: "none",
+          }}
+        >
+          🔗 Ver publicación directamente en Facebook
+        </a>
         {/* Forzar estilos internos del span e iframe generados por Facebook */}
         <style>
           {`
@@ -51,19 +63,7 @@ const FacebookCard = ({ fbUrl }) => {
           `}
         </style>
 
-        <a
-          href={fbUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "block",
-            marginTop: "15px",
-            color: "#1877f2",
-            textDecoration: "none",
-          }}
-        >
-          🔗 Ver publicación directamente en Facebook
-        </a>
+        
 
         <button
           onClick={() => window.FB && window.FB.XFBML.parse()}
