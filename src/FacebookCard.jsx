@@ -31,7 +31,8 @@ const FacebookCard = ({ fbUrl }) => {
           data-height={forcedHeight}
           style={{
             width: "100%",
-            height: `${forcedHeight}px`,
+            height: `500px`,
+    paddingTop: "50px",
           }}
         ></div>
 <a
@@ -43,6 +44,7 @@ const FacebookCard = ({ fbUrl }) => {
             marginTop: "15px",
             color: "#1877f2",
             textDecoration: "none",
+    paddingTop: "75px",
           }}
         >
           🔗 Ver publicación directamente en Facebook
