@@ -13,14 +13,29 @@ const App = () => {
   const [menuVisible, setMenuVisible] = useState(false);
   const [menuCoords, setMenuCoords] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
+/*   useEffect(() => {
     fetch("https://dalton.microlabjqr.site/dist/config.json")
       .then((res) => res.json())
       .then((data) => setRedesSociales(enrichConfig(data)))
       .catch(() =>
         console.warn("No se pudo cargar configuración externa. Se usará la configuración por defecto.")
       );
-  }, []);
+  }, []); */
+
+  useEffect(() => {
+  fetch("https://dalton.microlabjqr.site/dist/config.json")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("✔️ JSON externo cargado:", data);
+      const enriched = enrichConfig(data);
+      console.log("🔗 Enriched config:", enriched);
+      setRedesSociales(enriched);
+    })
+    .catch(() =>
+      console.warn("⚠️ No se pudo cargar configuración externa. Se usará la configuración por defecto.")
+    );
+}, []);
+
 
   useEffect(() => {
     const handleClickOutside = (e) => {
