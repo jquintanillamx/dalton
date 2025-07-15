@@ -99,7 +99,7 @@ const App = () => {
     loadFacebookPost();
   }, [conversationChannel, conversationUrl]);
 
-  useEffect(() => {
+  /* useEffect(() => {
     if (fbUrl) {
       if (window.FB) {
         window.FB.XFBML.parse();
@@ -119,7 +119,31 @@ const App = () => {
       script.src = "https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v17.0";
       document.body.appendChild(script);
     }
-  }, [fbUrl]);
+  }, [fbUrl]); */
+
+
+useEffect(() => {
+  if (fbUrl) {
+    if (window.FB) {
+      window.FB.XFBML.parse(); // Solo si FB ya está cargado y hay URL
+    } else {
+      window.fbAsyncInit = function () {
+        window.FB.init({
+          appId: "197887303586344",
+          xfbml: true,
+          version: "v17.0",
+        });
+      };
+      const script = document.createElement("script");
+      script.async = true;
+      script.defer = true;
+      script.crossOrigin = "anonymous";
+      script.src = "https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v17.0";
+      document.body.appendChild(script);
+    }
+  }
+}, [fbUrl]);
+
 
   // Si FB, renderiza FacebookCard
   if (conversationChannel === "FB") {
