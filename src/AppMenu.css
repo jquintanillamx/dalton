@@ -1,0 +1,23 @@
+.context-menu {
+    position: fixed;
+    background-color: #222;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 8px;
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    font-size: 0.9rem;
+  }
+  
+  .context-menu > div {
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .context-menu > div:hover {
+    background-color: #333;
+  }
+  

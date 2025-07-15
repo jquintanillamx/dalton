@@ -1,0 +1,420 @@
+.llamada-salida {
+  display: flex;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 20px;
+  box-shadow: 0 4px 8px black;
+  background-color: #56b656
+  ; /* Verde de fondo */
+  color: rgb(255, 255, 255);
+  padding: 25px;
+  border-radius: 8px;
+  animation: pulsate 3s infinite;
+  }
+  
+  .llamada-contenedor {
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+  }
+  .llamada-contenedor h1 {
+    font-size: 2.5rem
+  }
+  
+  .llamada-enCurso {
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 20px;
+    box-shadow: 0 4px 8px black;
+    background-color: #56b656
+    ; /* Verde de fondo */
+    color: rgb(255, 255, 255);
+    padding: 25px;
+    border-radius: 8px;
+   
+    animation: pulsate 3s infinite;
+    justify-content: center; /* Centra el contenedor horizontalmente */
+    width: 100%;
+    height: 100%;
+  }
+
+  .puntos {
+    display: inline-block;
+    min-width: 30px; /* Ancho mínimo para que los puntos no hagan moverse al texto */
+    text-align: center;
+    font-size: 2em;
+    color: black; /* Alineación a la izquierda de los puntos */
+  }
+  .timer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Asegura que el contenido dentro del timer también esté centrado */
+    font-family: 'Arial', sans-serif;
+    margin-left: 0; /* Asegúrate de que no haya margen adicional que lo desplace */
+    box-shadow: 0 4px 8px #28a745; /* Sombra */
+    transition: box-shadow 3s ease-in-out;
+    border-radius: 8px; /* Borde redondeado */
+    padding: 10px; /* Espaciado interno */
+    background-color: white; /* Fondo blanco */
+}
+  
+  .color-box {
+    width: 75px;
+    height: 100px;
+    background-color: #28a745; /* Inicia en verde */
+    transition: background-color 3s linear; /* Transición suave entre colores */
+    animation: pulsate 3s infinite; /* Efecto de brillo */
+    margin-left: 10px;
+  
+    /* Añadido para centrar el span */
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+  }
+
+  .neo-icon-work-start {
+    font-size: 24px; /* Tamaño del ícono */
+    color: #f9f9f9; /* Color del ícono */
+  }
+  
+  .time-display {
+    font-size: 5rem;
+    margin-left: 30px;
+  }
+  
+  /* Animación para el efecto de brillo */
+  @keyframes pulsate {
+    0% {
+      filter: brightness(1);
+    }
+    50% {
+      filter: brightness(1.18); /* Aumenta el brillo a 1.5 */
+    }
+    100% {
+      filter: brightness(1); /* Vuelve al brillo normal */
+    }
+  }
+  
+
+  /* Contenedor principal */
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 75vh; /* Toda la altura de la ventana */
+    
+  }
+  
+  /* Fila superior que contiene estadoLlamada y datosSCobranza */
+  .top-row {
+    display: flex;
+    height: 20%; /* Ocupa el 20% del contenedor principal */
+    width: 100%;
+  }
+  
+  /* Estado de llamada (lado izquierdo) */
+  .estadoLlamada {
+    width: 50%; /* Ocupa el 50% del ancho */
+    display: flex;
+    justify-content: center; /* Cambia justify-content a 'center' para centrar horizontalmente */
+    align-items: center; /* Esto asegura el centrado vertical */
+    padding: 10px;
+    border-radius: 20px;
+}
+  
+  /* Datos SCobranza (lado derecho) */
+  .datosSCobranza {
+    width: 50%; /* Ocupa el otro 50% del ancho */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+   
+  }
+  
+  /* Parte inferior que ocupa el 80% */
+  .scriptAgente {
+    flex: 1;
+    height: 80%; /* Ocupa el 80% del contenedor principal */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+  
+
+
+  .toast {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    animation: fadeInOut 3s;
+  }
+  
+  [widget-name="webcomponent-cobranza"] {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+}
+  
+
+
+  .toast-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column-reverse; /* Las nuevas notificaciones aparecen en la parte inferior */
+    gap: 10px; /* Espacio entre las notificaciones */
+    z-index: 1000;
+  }
+  
+  .toast-notification {
+  
+    color: white;
+    border-radius: 5px;
+   
+    width: 600px;
+    height: 120px;
+   
+  }
+  
+  /* Animación para el fade in/out */
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    10% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    90% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+
+  .bodyScript {
+    font-family: 'Roboto', sans-serif; /* Cambia a una fuente más profesional */
+    background-color: #ffffff; /* Fondo más suave */
+    color: #333;
+    
+}
+
+/* Estilos del contenedor principal */
+.containerScript {
+    margin: 21px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Limitar el ancho para una mejor legibilidad */
+}
+
+/* Estilos para la barra superior */
+.top-bar {
+  background-color: #eb0028; /* Azul más oscuro y formal */
+  padding: 15px;
+  display: flex;
+  justify-content: center; /* Asegura que el contenido esté centrado horizontalmente */
+  align-items: center;     /* Si deseas centrar también verticalmente */
+}
+
+.top-bar img {
+  height: 50px;
+  background: none;
+}
+[aria-label="global-cobranza"] {
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 20px; /* Simplificación del padding */
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+}
+
+/* Estilos del título */
+.bodyScript > h1 {
+    color: #eb0028;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Estilo de los párrafos */
+.bodyScript > p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Para el saludo */
+.saludo {
+    color: #003366;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+/* Para los nombres y otros datos */
+span.firstName, span.agentName, span.tarjeta, span.venceMesAnterior {
+    font-weight: bold;
+    color: #1737b8;
+    font-size: 1.2em;
+}
+
+/* Estilo de las notas resaltadas */
+.highlight {
+    background-color: #ffffcc;
+    border-left: 5px solid #ffc107;
+    padding: 10px 15px;
+    display: inline-block;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+/* Estilo especial para las notas */
+.highlight strong {
+    text-decoration: underline;
+    color: #d9534f;
+}
+@media (max-width: 600px) {
+  .containerScript {
+      padding: 15px;
+  }
+
+  .bodyScript > p {
+      font-size: 1em;
+  }
+}
+
+
+.panelControl {
+  display: flex;
+  width: 100%; /* Ocupa el 100% del contenedor que lo alberga */
+  height: 100%; /* Asegura que también ocupe el 100% en altura */
+  justify-content: center; /* Asegura separación uniforme */
+}
+
+.objectPanel1{
+  flex: 0 0 15%; /* Cada parte ocupa el 25% del ancho */
+  margin: 0px; /* Espacio entre los elementos si es necesario */
+  background-color: #ffffff; /* Color de fondo para identificar las partes */
+  padding: 0px;
+  border-radius: 5px; /* Bordes suaves */
+  
+}
+
+
+.DatosFaltantes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50%; /* Ajusta el ancho si es necesario */
+  background-color: #fff9c4; /* Un amarillo claro para advertencia */
+  border: 2px solid #fdd835; /* Un borde más fuerte de color amarillo */
+  padding: 10px;
+  border-radius: 5px; /* Bordes redondeados para apariencia de botón */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  font-weight: bold; /* Texto en negrita */
+  color: #6d4c41; /* Color marrón para el texto, destacando sobre el amarillo */
+}
+
+.iconPanel{
+  color: #757474;
+}
+
+.objectPanel2{
+  flex: 0 0 65%; /* Cada parte ocupa el 25% del ancho */
+  margin: 0px; /* Espacio entre los elementos si es necesario */
+  background-color: #ffffff; /* Color de fondo para identificar las partes */
+  padding: 0px;
+  border-radius: 5px; /* Bordes suaves */
+  display: flex;
+}
+
+.escrituraPOM{
+  flex: 0 0 50%; /* Cada parte ocupa el 25% del ancho */
+  margin: 0px; /* Espacio entre los elementos si es necesario */
+  background-color: #ffffff; /* Color de fondo para identificar las partes */
+  padding: 0px;
+  border-radius: 5px; /* Bordes suaves */
+  white-space: nowrap;     /* Evitar el salto de línea */
+  overflow: hidden;        /* Ocultar el texto que excede el ancho del contenedor */
+  text-overflow: ellipsis; /* Agregar puntos suspensivos (...) si el texto es demasiado largo */
+  width: 100%;             /* Asegurar que el contenedor ocupe el 100% del ancho disponible */
+  display: block;    
+;
+ 
+}
+
+.botonPOM {
+  flex: 0 0 50%; /* Mantienes el ancho del 40% que deseas */
+  margin: 0px;
+  background-color: #ffffff;
+  padding: 0px;
+  border-radius: 5px;
+  
+  display: flex;           /* Activar flexbox para centrar el contenido */
+  justify-content: center; /* Centrar el botón horizontalmente */
+  align-items: center;     /* Centrar el botón verticalmente */
+  height: 100%;            /* Asegurar que ocupe toda la altura del contenedor padre, o puedes ajustarlo según el diseño */
+}
+
+
+.stateCall {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+.neo-group-list__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.neo-group-list__item {
+  font-size: 1rem; /* Tamaño base de fuente */
+  margin-right: 10px; /* Espaciado entre elementos */
+}
+
+.iconPanel {
+  font-size: 1.5rem; /* Tamaño base del ícono */
+}
+
+
+
+/* Media query para pantallas con altura menor a 886px */
+@media (max-height: 886px) {
+  .panelControl {
+    transform: scale(0.75); /* Escala todo el contenedor al 75% */
+    transform-origin: top;  /* Mantiene el origen de la escala en la parte superior */
+  }
+
+  .objectPanel1, .objectPanel2, .botonPOM {
+    padding: 0; /* Ajustar el padding si es necesario para mantener el diseño reducido */
+  }
+
+  .neo-group-list__item {
+    font-size: 0.75rem; /* Reduce el tamaño de fuente un 25% */
+  }
+
+  .iconPanel {
+    font-size: 1.125rem; /* Reduce el tamaño del ícono un 25% */
+  }
+
+}
+
