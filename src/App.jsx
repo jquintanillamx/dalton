@@ -84,7 +84,7 @@ const App = () => {
     const loadFacebookPost = async () => {
       if (conversationChannel === "FB" && conversationUrl) {
         try {
-          const response = await fetch(conversationUrl);
+          const response = await fetch(conversationUrl, {credentials: "omit",});
           const htmlText = await response.text();
           const parser = new DOMParser();
           const doc = parser.parseFromString(htmlText, "text/html");
