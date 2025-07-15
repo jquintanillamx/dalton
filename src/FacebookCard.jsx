@@ -6,7 +6,7 @@ const FacebookCard = ({ fbUrl }) => {
   }
 
   const forcedWidth = 500;   // Ancho fijo del iframe (puedes ajustar)
-  const forcedHeight = 600;  // Alto fijo del iframe y contenedor
+  const forcedHeight = 400;  // Alto fijo del iframe y contenedor
 
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
