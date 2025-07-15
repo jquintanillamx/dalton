@@ -7,8 +7,6 @@ const FacebookCard = ({ fbUrl }) => {
 
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      <h3 style={{ color: "#555" }}>📌 Previsualización del Post de Facebook</h3>
-
       {/* 🔗 Enlace arriba */}
       <a
         href={fbUrl}
