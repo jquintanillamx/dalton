@@ -21,7 +21,7 @@ const FacebookCard = ({ fbUrl }) => {
           width: "100%",
           overflow: "hidden",
           margin: "20px auto",
-          height: `${forcedHeight}px`, // Forzar alto máximo del contenedor
+          height: "600px", // Forzar alto máximo del contenedor
         }}
       >
         <div
@@ -31,7 +31,7 @@ const FacebookCard = ({ fbUrl }) => {
           data-height={forcedHeight}
           style={{
             width: "100%",
-            height: `${forcedHeight}px`,
+            height: `600px`,
           }}
         ></div>
 
@@ -41,12 +41,12 @@ const FacebookCard = ({ fbUrl }) => {
             .fb-post span {
               display: block;
               width: 100% !important;
-              height: ${forcedHeight}px !important;
+              height: 600px !important;
             }
             .fb-post iframe {
               display: block;
               width: 100% !important;
-              height: ${forcedHeight}px !important;
+              height: 600px !important;
             }
           `}
         </style>
