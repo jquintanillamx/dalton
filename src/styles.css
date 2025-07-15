@@ -418,3 +418,9 @@ span.firstName, span.agentName, span.tarjeta, span.venceMesAnterior {
 
 }
 
+.fb-post iframe {
+  max-width: 100% !important;
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+}
