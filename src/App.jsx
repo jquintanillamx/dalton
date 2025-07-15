@@ -14,7 +14,7 @@ const App = () => {
   const [menuCoords, setMenuCoords] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    fetch("http://127.0.0.1/sociales-widget/config.json")
+    fetch("https://dalton.microlabjqr.site/dist/config.json")
       .then((res) => res.json())
       .then((data) => setRedesSociales(enrichConfig(data)))
       .catch(() =>
