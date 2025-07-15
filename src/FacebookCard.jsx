@@ -6,7 +6,7 @@ const FacebookCard = ({ fbUrl }) => {
   }
 
   const forcedWidth = 500;   // Ancho fijo del iframe (puedes ajustar)
-  const forcedHeight = 500;  // Alto fijo del iframe y contenedor
+  const forcedHeight = 600;  // Alto fijo del iframe y contenedor
 
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
@@ -68,7 +68,7 @@ const FacebookCard = ({ fbUrl }) => {
         <button
           onClick={() => window.FB && window.FB.XFBML.parse()}
           style={{
-            marginTop: "10px",
+            marginTop: "5px",
             padding: "8px 16px",
             backgroundColor: "#1877f2",
             color: "#fff",
