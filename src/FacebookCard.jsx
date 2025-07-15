@@ -7,7 +7,9 @@ const FacebookCard = ({ fbUrl }) => {
 
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      <h3 style={{ color: "#555" }}>📌 Previsualización del Post de Facebook</h3>
+      <h3 style={{ color: "#555" }}>
+        📌 Previsualización del Post de Facebook
+      </h3>
 
       <div
         style={{
@@ -25,7 +27,20 @@ const FacebookCard = ({ fbUrl }) => {
           className="fb-post"
           data-href={fbUrl}
           data-width="500"
-        ></div>
+          data-height="600" // 👈 Forzar alto sugerido al plugin
+          style={{ width: "100%", height: "600px" }} // 👈 Forzar inline
+        >
+          {/* Facebook inyecta un iframe aquí */}
+        </div>
+
+        {/* Hack para forzar el iframe también */}
+        <style>{`
+          .fb-post iframe {
+            width: 100% !important;
+            height: 600px !important;
+            display: block;
+          }
+        `}</style>
 
         <a
           href={fbUrl}

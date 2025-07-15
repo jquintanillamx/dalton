@@ -66,9 +66,3 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-.fb-post iframe {
-  max-width: 100% !important;
-  width: 100% !important;
-  height: auto !important;
-  display: block;
-}

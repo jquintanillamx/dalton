@@ -41,9 +41,3 @@
   color: #888;
 }
 /* Forzar el iframe a ser responsivo */
-.fb-post iframe {
-  max-width: 100% !important;
-  width: 100% !important;
-  height: auto !important;
-  display: block;
-}
